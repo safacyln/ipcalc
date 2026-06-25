@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IP Calc — Hızlı IPv4 Subnet Hesaplayıcı</title>
+<meta name="description" content="IPv4 adres, netmask, broadcast, host aralığı ve subnet bölme hesaplayıcı. Cloudflare Pages üzerinde çalışır.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-header">
+      <h1>IP Calc</h1>
+      <p class="subtitle">IPv4 host, netmask, broadcast ve subnet hesaplayıcı</p>
+    </header>
+
+    <main>
+      <form id="calc-form" class="card" autocomplete="off">
+        <div class="field">
+          <label for="host">Host / IP Adresi</label>
+          <input type="text" id="host" name="host" placeholder="örn. 217.177.0.0" required>
+        </div>
+        <div class="field">
+          <label for="mask1">Netmask <span class="hint">(CIDR /29, 29 veya 255.255.255.248)</span></label>
+          <input type="text" id="mask1" name="mask1" placeholder="örn. 29" required>
+        </div>
+        <div class="field">
+          <label for="mask2">İkinci Netmask <span class="hint">(opsiyonel — alt ağlara böl)</span></label>
+          <input type="text" id="mask2" name="mask2" placeholder="örn. 30">
+        </div>
+        <div class="field actions">
+          <button type="submit">Hesapla</button>
+        </div>
+      </form>
+
+      <p id="error" class="error" hidden></p>
+
+      <section id="result" class="card" hidden>
+        <h2>Sonuç</h2>
+        <table class="result-table">
+          <tbody id="result-body"></tbody>
+        </table>
+
+        <h3>İkili (Binary) Görünüm</h3>
+        <div class="binary-view" id="binary-view"></div>
+      </section>
+
+      <section id="subnets" class="card" hidden>
+        <h3>Alt Ağlar (Subnets)</h3>
+        <p id="subnets-info" class="hint"></p>
+        <div class="table-scroll">
+          <table class="result-table" id="subnets-table">
+            <thead>
+              <tr><th>#</th><th>Network</th><th>Netmask</th><th>Host Aralığı</th><th>Broadcast</th></tr>
+            </thead>
+            <tbody id="subnets-body"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="ads">
+      <h3>LogiSafe Çözümleri</h3>
+      <div class="ad-grid">
+        <a class="ad-card" href="https://logispot.net/" target="_blank" rel="noopener">
+          <h4>LogiSpot</h4>
+          <p>Network ve siber güvenlik operasyonları için izleme platformu.</p>
+        </a>
+
+        <div class="ad-card ad-card--static">
+          <h4>LogiFeeds</h4>
+          <p>USOM, ESB ve BTK'nın ilettiği engelleme ve yasaklanması gereken kararları otomatik olarak uygulayan engelleme sistemi.</p>
+        </div>
+
+        <a class="ad-card" href="https://logisafe.net.tr/hizmetlerimiz/danismanlik/isp-planning/" target="_blank" rel="noopener">
+          <h4>MikroTik Danışmanlık</h4>
+          <p>LogiSafe MikroTik network danışmanlık hizmetleri ile ISP planlama.</p>
+        </a>
+
+        <a class="ad-card" href="https://logisafe.net.tr/cozumlerimiz/ddos-koruma/" target="_blank" rel="noopener">
+          <h4>DDoS Danışmanlık</h4>
+          <p>LogiSafe DDoS koruma danışmanlık ve mitigasyon çözümleri.</p>
+        </a>
+      </div>
+    </footer>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
