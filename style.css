@@ -168,20 +168,20 @@ button:hover {
   overflow-y: auto;
 }
 
-.ads h3 {
+.partners h3 {
   text-align: center;
   color: var(--muted);
   font-weight: 500;
   margin-bottom: 16px;
 }
 
-.ad-grid {
+.partner-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
 }
 
-.ad-card {
+.partner-card {
   display: block;
   background: var(--card);
   border: 1px solid var(--border);
@@ -192,27 +192,27 @@ button:hover {
   transition: border-color 0.15s ease, transform 0.15s ease;
 }
 
-.ad-card:hover {
+.partner-card:hover {
   border-color: var(--accent-2);
   transform: translateY(-2px);
 }
 
-.ad-card--static {
+.partner-card--static {
   cursor: default;
 }
 
-.ad-card--static:hover {
+.partner-card--static:hover {
   border-color: var(--border);
   transform: none;
 }
 
-.ad-card h4 {
+.partner-card h4 {
   margin: 0 0 6px;
   font-size: 1rem;
   color: var(--accent-2);
 }
 
-.ad-card p {
+.partner-card p {
   margin: 0;
   font-size: 0.85rem;
   color: var(--muted);
@@ -221,7 +221,7 @@ button:hover {
 
 @media (max-width: 640px) {
   #calc-form { grid-template-columns: 1fr; }
-  .ad-grid { grid-template-columns: 1fr; }
+  .partner-grid { grid-template-columns: 1fr; }
   .field.actions { justify-content: stretch; }
   .field.actions button { width: 100%; }
 }
